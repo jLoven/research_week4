@@ -1,13 +1,13 @@
-%  Jackie Loven, 17 March 2016
+%  Jackie Loven, 19 March 2016
 
 matrix1 = ones(10, 10, 10, 11);
 matrix2 = ones(10, 10, 10, 11) * 0;
 matrix3 = ones(10, 10, 10, 11) * 2;
-%matrix4 = ones(10, 10, 10, 11) * 3;
-%matrix5 = ones(10, 10, 10, 11) * 1;
+matrix4 = ones(10, 10, 10, 11) * 3;
+matrix5 = ones(10, 10, 10, 11) * 1;
 
-%matrixList = {matrix1, matrix2, matrix3, matrix4, matrix5};
-matrixList = {matrix1, matrix2, matrix3};
+matrixList = {matrix1, matrix2, matrix3, matrix4, matrix5};
+%matrixList = {matrix1, matrix2, matrix3};
 
 %  Assume matrix sizes are all the same.
 x = size(matrixList{1, 1}, 1);
@@ -21,11 +21,11 @@ A = [x, y, z, extraParamCount, number];
 % Elapsed time for fitting function on 10x10x10 is approx. 55 seconds for
 % each matrix.  
 %  Tuner = 5, generationCount = 2:
-[generationList, listOfMeans] = create_crossover_and_mutation_generation(A, 5, matrixList, 2);
+[generationList, listOfMeans] = create_crossover_and_mutation_generation(A, 5, matrixList, 3);
 
 fitFnValues = listOfMeans;
 %  Goes up to generationCount:
-x = 1:2;
+x = 1:3;
 
 close all
 hold on
